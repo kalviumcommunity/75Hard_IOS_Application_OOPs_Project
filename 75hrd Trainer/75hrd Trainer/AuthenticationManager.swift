@@ -12,6 +12,10 @@ class AuthenticationManager {
     
     private init() {}
     
+    deinit {
+            print("Used authentication manager")
+        }
+    
     func signUp(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let user = authResult?.user {

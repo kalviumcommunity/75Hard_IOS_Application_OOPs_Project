@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLoggedIn: Bool = false
     var body: some View {
-        SignupScreen()
+        if isLoggedIn {
+                    HomeScreen()
+                } else {
+                    LoginScreen(onLogin: { sessionId in
+                        UserDefaults.standard.set(sessionId, forKey: "sessionId")
+                        self.isLoggedIn = true
+                    })
+                }
     }
 }
 

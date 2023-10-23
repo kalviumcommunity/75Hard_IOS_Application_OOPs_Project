@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		913084FD2AE6EC70005D183B /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913084FC2AE6EC70005D183B /* TaskModel.swift */; };
+		913084FF2AE6EE13005D183B /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913084FE2AE6EE13005D183B /* ChallengeView.swift */; };
 		918AF3162AD46F1B004FC190 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918AF3152AD46F1B004FC190 /* LoginScreen.swift */; };
 		918AF3182AD4749F004FC190 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918AF3172AD4749F004FC190 /* HomeScreen.swift */; };
 		91DC4EA92AC1E3DB00C689AC /* _5hrd_TrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DC4EA82AC1E3DB00C689AC /* _5hrd_TrainerApp.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		913084FC2AE6EC70005D183B /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		913084FE2AE6EE13005D183B /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		918AF3152AD46F1B004FC190 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		918AF3172AD4749F004FC190 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		91DC4EA52AC1E3DB00C689AC /* 75hrd Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "75hrd Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +80,9 @@
 				91DC4EAE2AC1E3DD00C689AC /* Preview Content */,
 				91DC4EBD2AC1EBBD00C689AC /* UserModel.swift */,
 				91DC4EBF2AC1EC1500C689AC /* AuthenticationManager.swift */,
+				913084FC2AE6EC70005D183B /* TaskModel.swift */,
 				91DC4EC12AC1EC6F00C689AC /* SignupScreen.swift */,
+				913084FE2AE6EE13005D183B /* ChallengeView.swift */,
 				918AF3152AD46F1B004FC190 /* LoginScreen.swift */,
 				918AF3172AD4749F004FC190 /* HomeScreen.swift */,
 			);
@@ -174,7 +180,9 @@
 				918AF3182AD4749F004FC190 /* HomeScreen.swift in Sources */,
 				91DC4EBE2AC1EBBD00C689AC /* UserModel.swift in Sources */,
 				91DC4EC22AC1EC6F00C689AC /* SignupScreen.swift in Sources */,
+				913084FF2AE6EE13005D183B /* ChallengeView.swift in Sources */,
 				91DC4EA92AC1E3DB00C689AC /* _5hrd_TrainerApp.swift in Sources */,
+				913084FD2AE6EC70005D183B /* TaskModel.swift in Sources */,
 				918AF3162AD46F1B004FC190 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

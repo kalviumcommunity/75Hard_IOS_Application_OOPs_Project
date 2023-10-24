@@ -13,16 +13,11 @@ struct ContentView: View {
         if isLoggedIn {
                     HomeScreen()
                 } else {
-                    LoginScreen(onLogin: { sessionId in
-                        UserDefaults.standard.set(sessionId, forKey: "sessionId")
-                        self.isLoggedIn = true
-                    })
+                    OnboardingScreen()
                 }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

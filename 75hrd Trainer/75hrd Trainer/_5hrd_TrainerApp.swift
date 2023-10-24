@@ -23,6 +23,7 @@ struct _5hrd_TrainerApp: App {
                         print("User is not logged in")
                     }
                 }
+                .preferredColorScheme(.dark)
         }
     }
 }

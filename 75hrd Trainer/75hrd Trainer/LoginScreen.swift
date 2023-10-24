@@ -105,3 +105,8 @@ struct LoginScreen: View {
     }
 }
 
+#Preview {
+    LoginScreen(onLogin: { sessionId in
+        UserDefaults.standard.set(sessionId, forKey: "sessionId")
+    })
+}

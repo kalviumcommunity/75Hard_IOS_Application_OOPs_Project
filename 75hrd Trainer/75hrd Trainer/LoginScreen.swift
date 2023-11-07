@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginScreen: View {
+    // Encapsulation
     @State private var email = ""
     @State private var password = ""
     var onLogin: (String) -> Void

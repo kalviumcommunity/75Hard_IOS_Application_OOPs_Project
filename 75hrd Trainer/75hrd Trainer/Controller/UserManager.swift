@@ -8,50 +8,32 @@
 import Foundation
 import Firebase
 import FirebaseAuth
-import FirebaseFirestore
 
+// UserManager using the Profile base class
 class UserManager {
-    private var currentUser: User?
-    
+    private var currentUser: Profile?
+
     var userDetail: UserDetail?
-    
-    func getCurrentUser() -> User? {
-            return currentUser
-        }
-    
+
+    func getCurrentUser() -> Profile? {
+        return currentUser
+    }
+
     private func saveUserDetailsToFirestore(gender: String, age: Int, weight: Double, fitnessGoals: String) {
-            guard let userId = currentUser?.uid else { return }
-            
-            let userDetail = UserDetail(userId: userId, gender: gender, age: age, weight: weight, fitnessGoals: fitnessGoals)
-            
-            let db = Firestore.firestore()
-            let userDetailRef = db.collection("userDetails").document(userId)
-            
-            userDetailRef.setData(userDetail.dictionary) { error in
-                if let error = error {
-                    print("Error saving user details: \(error.localizedDescription)")
-                } else {
-                    self.userDetail = userDetail
-                    print("User details saved successfully.")
-                }
+        guard let userId = currentUser?.uid else { return }
+
+        let userDetail = UserDetail(uid: userId, gender: gender, age: age, weight: weight, fitnessGoals: fitnessGoals)
+
+        let db = FirebaseFirestore.firestore()
+        let userDetailRef = db.collection("userDetails").document(userId)
+
+        userDetailRef.setData(userDetail.dictionary) { error in
+            if let error = error {
+                print("Error saving user details: \(error.localizedDescription)")
+            } else {
+                self.userDetail = userDetail
+                print("User details saved successfully.")
             }
         }
-}
-
-struct UserDetail {
-    let userId: String
-    let gender: String
-    let age: Int
-    let weight: Double
-    let fitnessGoals: String
-    
-    var dictionary: [String: Any] {
-        return [
-            "userId": userId,
-            "gender": gender,
-            "age": age,
-            "weight": weight,
-            "fitnessGoals": fitnessGoals
-        ]
     }
 }

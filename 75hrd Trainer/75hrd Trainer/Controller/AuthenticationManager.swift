@@ -5,7 +5,7 @@
 //  Created by Tanishq Patidar on 25/09/23.
 //
 
-import Firebase
+//import Firebase
 
 class AuthenticationManager {
     static let shared = AuthenticationManager()

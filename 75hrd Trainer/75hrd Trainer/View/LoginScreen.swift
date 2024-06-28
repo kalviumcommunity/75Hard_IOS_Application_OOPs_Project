@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct LoginScreen: View {
-    // Encapsulation
     @State private var email = ""
     @State private var password = ""
     var onLogin: (String) -> Void
     @State private var sessionId: String = ""
     @State private var loginStatus: String = ""
+    
+    // Inject the authentication service
+    var authService: AuthenticationService = AuthenticationManager.shared
+    
     var body: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            Color.black.edgesIgnoringSafeArea(.all)
             VStack(spacing: 22) {
-                ZStack{
+                ZStack {
                     Rectangle()
                         .frame(width: 40, height: 40)
                         .foregroundColor(Color(red: 0.64, green: 1, blue: 0))
@@ -59,11 +62,11 @@ struct LoginScreen: View {
                     .padding(.horizontal)
                 
                 Button(action: {
-                    AuthenticationManager.shared.signIn(email: email, password: password) { result in
+                    authService.signIn(email: email, password: password) { result in
                         switch result {
                         case .success(let user):
-                            self.onLogin(user.uid ?? "")
-                            print("User signed up with UID: \(user.uid ?? "")")
+                            self.onLogin(user.uid)
+                            print("User signed up with UID: \(user.uid)")
                             self.loginStatus = "user logged in successfully"
                         case .failure(let error):
                             print("Error signing up: \(error.localizedDescription)")
